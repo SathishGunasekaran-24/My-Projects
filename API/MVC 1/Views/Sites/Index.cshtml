@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MVC_1.Models.SiteInformations>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.materialId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.materialName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SiteId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.materialId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.materialName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SiteId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
